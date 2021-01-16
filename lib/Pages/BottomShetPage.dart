@@ -13,8 +13,6 @@ class _BottomSheetPageState extends State<BottomSheetPage> {
 
 
   // now should be new farhad branch working
-
-  // now in farhad branch
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
@@ -56,5 +54,3 @@ class _BottomSheetPageState extends State<BottomSheetPage> {
     );
   }
 }
-// khodaeish kheyli hal kardam ba in sabke kar kardan
-// in this row test again ;
