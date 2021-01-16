@@ -9,7 +9,7 @@ class BottomSheetPage extends StatefulWidget {
 class _BottomSheetPageState extends State<BottomSheetPage> {
 
   // test for commit for get documents
-  
+
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
@@ -17,7 +17,7 @@ class _BottomSheetPageState extends State<BottomSheetPage> {
       appBar: AppBar(),
       body: Container(
           height: size.height,
-          width: size.width,
+          width: size.width * 0.2,
           color: Colors.yellow,
           child: Column(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
