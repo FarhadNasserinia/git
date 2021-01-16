@@ -7,14 +7,7 @@ class BottomSheetPage extends StatefulWidget {
 }
 
 class _BottomSheetPageState extends State<BottomSheetPage> {
-
-  // test for commit for get documents
-  // to new branch
-
-
-  // now should be new farhad branch working
-
-  // now in farhad branch
+  // Delete All comment
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
