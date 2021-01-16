@@ -7,7 +7,7 @@ class BottomSheetPage extends StatefulWidget {
 }
 
 class _BottomSheetPageState extends State<BottomSheetPage> {
-  // Delete All comment
+
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
