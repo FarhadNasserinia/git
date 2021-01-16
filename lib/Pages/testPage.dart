@@ -2,7 +2,6 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_app/Models/LoginHistoryModel.dart';
 import 'package:flutter_app/Utils/CircularProgress.dart';
-import 'package:flutter_app/Utils/MyCostumClipper.dart';
 import 'package:flutter_app/WebService/RestFullApi.dart';
 import 'package:pull_to_refresh/pull_to_refresh.dart';
 import 'package:shared_preferences/shared_preferences.dart';
@@ -19,8 +18,6 @@ class TestPage extends StatefulWidget {
 }
 
 class _TestPageState extends State<TestPage> {
-
-  // in test page have a change
 
   RefreshController _refreshController = RefreshController(initialRefresh: false);
   LoginHistory loginHistory;
