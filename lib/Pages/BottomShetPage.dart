@@ -15,7 +15,7 @@ class _BottomSheetPageState extends State<BottomSheetPage> {
       body: Container(
           height: size.height,
           width: size.width,
-          color: Colors.green,
+          color: Colors.yellow,
           child: Column(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: <Widget>[
