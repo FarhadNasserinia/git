@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_app/Utils/util.dart';
 
 class BottomSheetPage extends StatefulWidget {
   @override
@@ -7,17 +8,21 @@ class BottomSheetPage extends StatefulWidget {
 }
 
 class _BottomSheetPageState extends State<BottomSheetPage> {
+
+  Widget body() {
+    return Container(
+      height: Util.height(context) * 0.9,
+      width: Util.width(context),
+      color: Colors.green,
+      child: Center(child: Text('${Util.height(context) * 1}')),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
-    Size size = MediaQuery.of(context).size;
     return Scaffold(
       appBar: AppBar(),
-      body: Container(
-        height: size.height,
-        width: size.width,
-        color: Colors.yellow,
-        child: Text('${size.height * 0.2}'),
-      ),
+      body: body(),
     );
   }
 }
