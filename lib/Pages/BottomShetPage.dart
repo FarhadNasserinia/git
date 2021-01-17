@@ -8,7 +8,6 @@ class BottomSheetPage extends StatefulWidget {
 }
 
 class _BottomSheetPageState extends State<BottomSheetPage> {
-
   Widget body() {
     return Container(
       height: Util.height(context) * 0.9,
