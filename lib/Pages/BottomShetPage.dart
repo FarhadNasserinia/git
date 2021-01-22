@@ -1,3 +1,5 @@
+import 'dart:async';
+import 'dart:io';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_app/Utils/util.dart';
@@ -8,6 +10,20 @@ class BottomSheetPage extends StatefulWidget {
 }
 
 class _BottomSheetPageState extends State<BottomSheetPage> {
+  bool internetCheck;
+  // check internal connection without dependency ;
+  Future internetConnection() async {
+    try {
+      final response = await InternetAddress.lookup('www.kindacode.com');
+      if (response.isNotEmpty) setState(() => internetCheck = true);
+      print('in response good : => $response');
+    } on SocketException catch (err) {
+      setState(() => internetCheck = false);
+      print(err);
+      print('Connection is off');
+    }
+  }
+
   Widget body() {
     return Container(
       height: Util.height(context) * 0.9,
@@ -19,7 +35,7 @@ class _BottomSheetPageState extends State<BottomSheetPage> {
 
   @override
   void initState() {
-    // TODO: implement initState
+    internetConnection();
     super.initState();
   }
 
@@ -33,7 +49,6 @@ class _BottomSheetPageState extends State<BottomSheetPage> {
 
   @override
   void dispose() {
-    // TODO: implement dispose
     super.dispose();
   }
 }
