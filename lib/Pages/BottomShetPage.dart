@@ -11,6 +11,7 @@ class BottomSheetPage extends StatefulWidget {
 
 class _BottomSheetPageState extends State<BottomSheetPage> {
   bool internetCheck;
+
   // check internal connection without dependency ;
   Future internetConnection() async {
     try {
@@ -25,11 +26,23 @@ class _BottomSheetPageState extends State<BottomSheetPage> {
   }
 
   Widget body() {
-    return Container(
-      height: Util.height(context) * 0.9,
-      width: Util.width(context),
-      color: Colors.green,
-      child: Center(child: Text('${Util.height(context) * 1}')),
+    return DraggableScrollableSheet(
+      expand: true,
+      initialChildSize: 0.4,
+      maxChildSize: 0.7,
+      minChildSize: 0.2,
+      builder: (BuildContext context, ScrollController scrollController) {
+        return Container(
+          color: Colors.blue[100],
+          child: ListView.builder(
+            controller: scrollController,
+            itemCount: 25,
+            itemBuilder: (BuildContext context, int index) {
+              return ListTile(title: Text('Item $index'));
+            },
+          ),
+        );
+      },
     );
   }
 
@@ -43,7 +56,7 @@ class _BottomSheetPageState extends State<BottomSheetPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(),
-      body: body(),
+      body: Container(height: Util.height(context), width: Util.width(context), child: body()),
     );
   }
 
@@ -53,6 +66,7 @@ class _BottomSheetPageState extends State<BottomSheetPage> {
   }
 }
 
+enum AnchoringPosition { topLeft, topRight, bottomLeft, bottomRight, center }
 /*
 it is a subscribe in last commit
  */
